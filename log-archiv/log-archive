@@ -5,7 +5,7 @@ Target_directory="$2"
 
 
 if [ -z "$Directory" ]; then
-	echo "Enter a valid directory!"
+	echo "Please enter an argument!"
 	exit 4
 fi
 
@@ -16,5 +16,7 @@ if [ -d "$Directory" ]; then
 	echo "============================================================"
 	echo "Your requested archive of ""$Directory"" has been completed"
 	exit 2
+else 
+	echo "This is not a valid directory!"
 fi
 
