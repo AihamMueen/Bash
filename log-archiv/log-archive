@@ -1,0 +1,20 @@
+#!/bin/bash
+
+Directory="$1"
+Target_directory="$2"
+
+
+if [ -z "$Directory" ]; then
+	echo "Enter a valid directory!"
+	exit 4
+fi
+
+if [ -d "$Directory" ]; then
+	echo "Archiving the directory ""$Directory"" to ""$Target_directory"""
+	tar -zcvf "${Target_directory}/log-archive_$( date '+%Y-%m-%d_%H%M%S').tar.gz" "$Directory"
+	sleep 5
+	echo "============================================================"
+	echo "Your requested archive of ""$Directory"" has been completed"
+	exit 2
+fi
+
